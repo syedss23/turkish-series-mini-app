@@ -10,7 +10,7 @@
   {
     "title": "Alp Arslan",
     "slug": "alp-arslan",
-    "poster": "assets/posters/Search Content - alp-arslan.jpg",
+    "poster": "assets/posters/alp-arslan.jpg",
     "description": "The rise of the Seljuk Empire under the leadership of Alp Arslan.",
     "stream_url": "https://example.com/stream/alp-arslan",
     "download_url": "https://example.com/download/alp-arslan"
@@ -34,7 +34,7 @@
   {
     "title": "The Great Seljuk",
     "slug": "the-great-seljuk",
-    "poster": "assets/posters/Search Content - Thegreatseljuk.jpg",
+    "poster": "assets/posters/thegreatseljuk.jpg",
     "description": "A historical saga of power, politics, and war during the Great Seljuk Empire.",
     "stream_url": "https://example.com/stream/the-great-seljuk",
     "download_url": "https://example.com/download/the-great-seljuk"
