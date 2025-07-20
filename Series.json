@@ -3,40 +3,95 @@
     "title": "Kuruluş Osman",
     "slug": "kurulus-osman",
     "poster": "assets/posters/osman.jpg",
-    "description": "The heroic journey of Osman Ghazi, founder of the Ottoman Empire.",
-    "stream_url": "https://example.com/stream/kurulus-osman",
-    "download_url": "https://example.com/download/kurulus-osman"
+    "description": "Kuruluş Osman is a historical Turkish series based on the life of Osman I, the founder of the Ottoman Empire.",
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "title": "Episode 1",
+            "stream": "https://yourstreaminglink.com/kurulus-osman-s1e1",
+            "download": "https://yourdownloadlink.com/kurulus-osman-s1e1"
+          },
+          {
+            "title": "Episode 2",
+            "stream": "https://yourstreaminglink.com/kurulus-osman-s1e2",
+            "download": "https://yourdownloadlink.com/kurulus-osman-s1e2"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Alp Arslan",
     "slug": "alp-arslan",
     "poster": "assets/posters/alp-arslan.jpg",
-    "description": "The rise of the Seljuk Empire under the leadership of Alp Arslan.",
-    "stream_url": "https://example.com/stream/alp-arslan",
-    "download_url": "https://example.com/download/alp-arslan"
+    "description": "Alp Arslan narrates the story of the Seljuk Sultan Alp Arslan and his victories that expanded the empire's territory.",
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "title": "Episode 1",
+            "stream": "https://yourstreaminglink.com/alp-arslan-s1e1",
+            "download": "https://yourdownloadlink.com/alp-arslan-s1e1"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Salahuddin Ayyubi",
     "slug": "salahuddin-ayyubi",
-    "poster": "assets/posters/salahuddin.jpg",
-    "description": "The story of Salahuddin, the liberator of Jerusalem and a symbol of bravery.",
-    "stream_url": "https://example.com/stream/salahuddin-ayyubi",
-    "download_url": "https://example.com/download/salahuddin-ayyubi"
+    "poster": "assets/posters/salahuddin-ayyubi.jpg",
+    "description": "The series follows the life of Salahuddin Ayyubi, the great Muslim leader who liberated Jerusalem.",
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "title": "Episode 1",
+            "stream": "https://yourstreaminglink.com/salahuddin-ayyubi-s1e1",
+            "download": "https://yourdownloadlink.com/salahuddin-ayyubi-s1e1"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Sultan Mehmet Fatih",
     "slug": "sultan-mehmet-fatih",
     "poster": "assets/posters/sultan-mehmet.jpg",
-    "description": "Witness the legendary conquest of Constantinople by Sultan Mehmet the Conqueror.",
-    "stream_url": "https://example.com/stream/sultan-mehmet-fatih",
-    "download_url": "https://example.com/download/sultan-mehmet-fatih"
+    "description": "Sultan Mehmet Fatih is about the conquest of Constantinople by the young and ambitious Sultan Mehmet II.",
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "title": "Episode 1",
+            "stream": "https://yourstreaminglink.com/sultan-mehmet-s1e1",
+            "download": "https://yourdownloadlink.com/sultan-mehmet-s1e1"
+          }
+        ]
+      }
+    ]
   },
   {
-  "title": "The Great Seljuk",
-  "slug": "the-great-seljuk",
-  "poster": "assets/posters/thegreatseljuk.jpg"
-  "description": "A historical saga of power, politics, and war during the Great Seljuk Empire.",
-  "stream_url": "https://example.com/stream/the-great-seljuk",
-  "download_url": "https://example.com/download/the-great-seljuk"
+    "title": "The Great Seljuk",
+    "slug": "the-great-seljuk",
+    "poster": "assets/posters/thegreatseljuk.jpg",
+    "description": "The Great Seljuk chronicles the rise and reign of the Seljuk Empire and its battles against enemies of the state.",
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "title": "Episode 1",
+            "stream": "https://yourstreaminglink.com/seljuk-s1e1",
+            "download": "https://yourdownloadlink.com/seljuk-s1e1"
+          }
+        ]
+      }
+    ]
   }
 ]
