@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Turkish Series Streaming</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Turkish Series Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>📺 Turkish Series</h1>
-  <div id="series-container" class="series-grid"></div>
-  <script src="assets/js/main.js"></script>
+  <h1>🎬 Turkish Series</h1>
+  <div id="series-list"></div>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(seriesList => {
+        const container = document.getElementById('series-list');
+        seriesList.forEach(s => {
+          const div = document.createElement('div');
+          div.innerHTML = `
+            <a href="series.html?slug=${s.slug}">
+              <img src="${s.poster}" alt="${s.title}" width="150" /><br>
+              <strong>${s.title}</strong>
+            </a><br><br>
+          `;
+          container.appendChild(div);
+        });
+      });
+  </script>
 </body>
 </html>
