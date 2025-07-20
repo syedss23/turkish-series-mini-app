@@ -1,0 +1,22 @@
+{
+  "kurulus-osman": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "Kurulu\u015f Osman S1E1",
+        "stream": "https://streamlink1.com",
+        "download": "https://shortlink.com/dl1"
+      },
+      {
+        "episode": 2,
+        "title": "Kurulu\u015f Osman S1E2",
+        "stream": "https://streamlink2.com",
+        "download": "https://shortlink.com/dl2"
+      }
+    ],
+    "season-2": []
+  },
+  "alp-arslan": {
+    "season-1": []
+  }
+}

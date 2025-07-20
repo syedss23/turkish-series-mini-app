@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Kurulu\u015f Osman",
+    "poster": "assets/posters/osman.jpg",
+    "slug": "kurulus-osman",
+    "seasons": 2
+  },
+  {
+    "title": "Alp Arslan",
+    "poster": "assets/posters/alparslan.jpg",
+    "slug": "alp-arslan",
+    "seasons": 1
+  }
+]
