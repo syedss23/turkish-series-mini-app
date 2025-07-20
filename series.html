@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Series Details</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="series-detail"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+
+    fetch('series.json')
+      .then(res => res.json())
+      .then(seriesList => {
+        const series = seriesList.find(s => s.slug === slug);
+        document.getElementById('series-detail').innerHTML = `
+          <h1>${series.title}</h1>
+          <img src="${series.poster}" width="300"/>
+        `;
+      });
+
+    fetch('links.json')
+      .then(res => res.json())
+      .then(data => {
+        if (!data[slug]) return;
+
+        Object.keys(data[slug]).forEach(season => {
+          const episodes = data[slug][season];
+          const seasonDiv = document.createElement('div');
+          seasonDiv.innerHTML = `<h2>${season.replace('-', ' ').toUpperCase()}</h2>`;
+
+          episodes.forEach(ep => {
+            const epDiv = document.createElement('div');
+            epDiv.innerHTML = `
+              <p><strong>${ep.title}</strong></p>
+              <a href="${ep.stream}" target="_blank">Watch</a> | 
+              <a href="${ep.download}" target="_blank">Download</a>
+            `;
+            seasonDiv.appendChild(epDiv);
+          });
+
+          document.getElementById('series-detail').appendChild(seasonDiv);
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Kuruluş Osman",
+    "slug": "kurulus-osman",
+    "poster": "assets/posters/kurulus-osman.jpg"
+  },
+  {
+    "title": "Alp Arslan",
+    "slug": "alp-arslan",
+    "poster": "assets/posters/alp-arslan.jpg"
+  },
+  {
+    "title": "Salahuddin Ayyubi",
+    "slug": "salauddin-ayyubi",
+    "poster": "assets/posters/salauddin-ayyubi.jpg"
+  },
+  {
+    "title": "Sultan Mehmet Fatih",
+    "slug": "sultan-mehmet-fatih",
+    "poster": "assets/posters/sultan-mehmet-fatih.jpg"
+  },
+  {
+    "title": "The Great Seljuk",
+    "slug": "thegreatseljuk",
+    "poster": "assets/posters/thegreatseljuk.jpg"
+  }
+]

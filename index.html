@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turkish Series</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>Turkish Series</h1>
+  <div id="series-container"></div>
+
+  <script>
+    fetch('series.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('series-container');
+        data.forEach(series => {
+          const div = document.createElement('div');
+          div.innerHTML = `
+            <a href="series.html?slug=${series.slug}">
+              <img src="${series.poster}" alt="${series.title}" width="200"/>
+              <h2>${series.title}</h2>
+            </a>
+          `;
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
