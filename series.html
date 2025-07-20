@@ -1,48 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Series Viewer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 id="series-title"></h1>
-  <div id="episodes"></div>
+fetch('links.json')
+  .then(res => res.json())
+  .then(data => {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get('slug');
+    const episodes = data.filter(item => item.slug === slug);
 
-    fetch('data.json')
-      .then(res => res.json())
-      .then(seriesList => {
-        const series = seriesList.find(s => s.slug === slug);
-        if (series) {
-          document.getElementById('series-title').textContent = series.title;
+    const episodeList = document.getElementById('episode-list');
+    if (episodes.length === 0) {
+      episodeList.innerHTML = '<p>No episodes found.</p>';
+      return;
+    }
 
-          fetch('links.json')
-            .then(r => r.json())
-            .then(links => {
-              const container = document.getElementById('episodes');
-              const seriesLinks = links[slug] || {};
-              Object.entries(seriesLinks).forEach(([season, episodes]) => {
-                const h2 = document.createElement('h2');
-                h2.textContent = season.replace('-', ' ').toUpperCase();
-                container.appendChild(h2);
-
-                episodes.forEach(ep => {
-                  const epDiv = document.createElement('div');
-                  epDiv.innerHTML = `
-                    <p><strong>${ep.title}</strong></p>
-                    <a href="${ep.stream}" target="_blank">▶ Watch</a> |
-                    <a href="${ep.download}" target="_blank">⬇ Download</a>
-                  `;
-                  container.appendChild(epDiv);
-                });
-              });
-            });
-        }
-      });
-  </script>
-</body>
-</html>
+    episodes.forEach(ep => {
+      const item = document.createElement('div');
+      item.className = 'episode-item';
+      item.innerHTML = `
+        <h4>${ep.title}</h4>
+        <p>Season: ${ep.season}, Episode: ${ep.episode}</p>
+        <a href="${ep.stream}" target="_blank">▶ Watch Online</a> |
+        <a href="${ep.download}" target="_blank">⬇ Download</a>
+      `;
+      episodeList.appendChild(item);
+    });
+  });
