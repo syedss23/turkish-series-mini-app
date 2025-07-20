@@ -32,11 +32,11 @@
     "download_url": "https://example.com/download/sultan-mehmet-fatih"
   },
   {
-    "title": "The Great Seljuk",
-    "slug": "the-great-seljuk",
-    "poster": "thegreatseljuk.jpg"
-    "description": "A historical saga of power, politics, and war during the Great Seljuk Empire.",
-    "stream_url": "https://example.com/stream/the-great-seljuk",
-    "download_url": "https://example.com/download/the-great-seljuk"
+  "title": "The Great Seljuk",
+  "slug": "the-great-seljuk",
+  "poster": "thegreatseljuk.jpg"
+  "description": "A historical saga of power, politics, and war during the Great Seljuk Empire.",
+  "stream_url": "https://example.com/stream/the-great-seljuk",
+  "download_url": "https://example.com/download/the-great-seljuk"
   }
 ]
