@@ -1,14 +1,26 @@
 [
   {
-    "title": "Kurulu\u015f Osman",
+    "title": "Kuruluş Osman",
     "poster": "assets/posters/osman.jpg",
     "slug": "kurulus-osman",
     "seasons": 2
   },
   {
     "title": "Alp Arslan",
-    "poster": "assets/posters/alparslan.jpg",
+    "poster": "assets/posters/alp-arslan.jpg",
     "slug": "alp-arslan",
+    "seasons": 1
+  },
+  {
+    "title": "Sultan Mehmet Fatih",
+    "poster": "assets/posters/sultan-mehmet.jpg",
+    "slug": "sultan-mehmet",
+    "seasons": 1
+  },
+  {
+    "title": "The Great Seljuk",
+    "poster": "assets/posters/Thegreatseljuk.jpg",
+    "slug": "the-great-seljuk",
     "seasons": 1
   }
 ]
