@@ -3,7 +3,7 @@
     "title": "Kuruluş Osman",
     "poster": "assets/posters/osman.jpg",
     "slug": "kurulus-osman",
-    "seasons": 2
+    "seasons": 6
   },
   {
     "title": "Alp Arslan",
@@ -19,7 +19,7 @@
   },
   {
     "title": "The Great Seljuk",
-    "poster": "assets/posters/Thegreatseljuk.jpg",
+    "poster": "assets/posters/thegreatseljuk.jpg",
     "slug": "the-great-seljuk",
     "seasons": 1
   }
