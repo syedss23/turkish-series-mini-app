@@ -1,22 +1,42 @@
-{
-  "kurulus-osman": {
-    "season-6": [
-      {
-        "episode": 1,
-        "title": "Kurulu\u015f Osman S1E1",
-        "stream": "https://streamlink1.com",
-        "download": "https://shortlink.com/dl1"
-      },
-      {
-        "episode": 2,
-        "title": "Kurulu\u015f Osman S1E2",
-        "stream": "https://streamlink2.com",
-        "download": "https://shortlink.com/dl2"
-      }
-    ],
-    "season-7": []
+[
+  {
+    "slug": "kurulus-osman",
+    "season": 6,
+    "episode": 1,
+    "title": "Kuruluş Osman S6E1",
+    "stream": "https://streamlink.com/kurulus-osman-s1e1",
+    "download": "https://short.link/kurulus-osman-s1e1"
   },
-  "alp-arslan": {
-    "season-1": []
+  {
+    "slug": "alp-arslan",
+    "season": 1,
+    "episode": 1,
+    "title": "Alp Arslan S1E1",
+    "stream": "https://streamlink.com/alp-arslan-s1e1",
+    "download": "https://short.link/alp-arslan-s1e1"
+  },
+  {
+    "slug": "salahuddin-ayyubi",
+    "season": 1,
+    "episode": 1,
+    "title": "Salahuddin Ayyubi S1E1",
+    "stream": "https://streamlink.com/salahuddin-ayyubi-s1e1",
+    "download": "https://short.link/salahuddin-ayyubi-s1e1"
+  },
+  {
+    "slug": "sultan-mehmet",
+    "season": 1,
+    "episode": 1,
+    "title": "Sultan Mehmet Fatih S1E1",
+    "stream": "https://streamlink.com/sultan-mehmet-s1e1",
+    "download": "https://short.link/sultan-mehmet-s1e1"
+  },
+  {
+    "slug": "the-great-seljuk",
+    "season": 1,
+    "episode": 1,
+    "title": "The Great Seljuk S1E1",
+    "stream": "https://streamlink.com/the-great-seljuk-s1e1",
+    "download": "https://short.link/the-great-seljuk-s1e1"
   }
-}
+]
