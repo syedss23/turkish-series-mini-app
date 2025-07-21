@@ -61,10 +61,16 @@ body {
 }
 
 .main {
-  margin-left: 220px;
   padding: 20px;
   flex-grow: 1;
   transition: all 0.3s ease;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .main {
+    margin-left: 220px;
+  }
 }
 
 .search-bar {
