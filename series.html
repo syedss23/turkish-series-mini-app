@@ -1,103 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Series Details</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
 <body>
-  <!-- Sidebar Toggle Button -->
+  <!-- Sidebar toggle button for mobile -->
   <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
-    <a href="index.html">Series</a><br>
-    <a href="links.html">Links</a><br>
+    <a href="index.html">Series</a>
+    <a href="links.html">Links</a>
   </div>
 
-  <!-- Dark overlay -->
+  <!-- Overlay for mobile -->
   <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- WRAP YOUR CONTENT INSIDE THIS -->
+  <!-- Main content -->
   <div class="content">
-    <!-- Posters grid -->
     <div class="poster-grid">
-      <!-- One poster example -->
+      <!-- Example Poster -->
       <div class="poster">
-        <img src="assets/posters/kurulus-osman.jpg" alt="Kuruluş Osman">
-        <h3>Kuruluş Osman</h3>
+        <a href="series.html?slug=kurulus-osman">
+          <img src="assets/posters/kurulus-osman.jpg" alt="Kuruluş Osman" />
+          <h3>Kuruluş Osman</h3>
+        </a>
       </div>
-      <!-- More posters... -->
+
+      <!-- Add more posters like this -->
+      <div class="poster">
+        <a href="series.html?slug=alp-arslan">
+          <img src="assets/posters/alp-arslan.jpg" alt="Alp Arslan" />
+          <h3>Alp Arslan</h3>
+        </a>
+      </div>
+      
+      <!-- ... Add all series posters ... -->
+
     </div>
   </div>
 
-  <!-- JavaScript at end -->
+  <!-- JavaScript -->
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('show');
+      document.getElementById("sidebar").classList.toggle("open");
+      document.getElementById("overlay").classList.toggle("show");
     }
   </script>
 </body>
-  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-
-<div id="sidebar" class="sidebar">
-  <a href="index.html">Series</a><br>
-  <a href="links.html">Links</a><br>
-  <!-- Remove "Further Info" -->
-</div>
-
-<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-  <div id="series-detail"></div>
-
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get('slug');
-
-    fetch('series.json')
-      .then(res => res.json())
-      .then(seriesList => {
-        const series = seriesList.find(s => s.slug === slug);
-        document.getElementById('series-detail').innerHTML = `
-          <h1>${series.title}</h1>
-          <img src="${series.poster}" width="300"/>
-        `;
-      });
-
-    fetch('links.json')
-      .then(res => res.json())
-      .then(data => {
-        if (!data[slug]) return;
-
-        Object.keys(data[slug]).forEach(season => {
-          const episodes = data[slug][season];
-          const seasonDiv = document.createElement('div');
-          seasonDiv.innerHTML = `<h2>${season.replace('-', ' ').toUpperCase()}</h2>`;
-
-          episodes.forEach(ep => {
-            const epDiv = document.createElement('div');
-            epDiv.innerHTML = `
-              <p><strong>${ep.title}</strong></p>
-              <a href="${ep.stream}" target="_blank">Watch</a> | 
-              <a href="${ep.download}" target="_blank">Download</a>
-            `;
-            seasonDiv.appendChild(epDiv);
-          });
-
-          document.getElementById('series-detail').appendChild(seasonDiv);
-        });
-      });
-  </script>
-</body>
-  <script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('show');
-  }
-  </script>
-</html>
