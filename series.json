@@ -1,1 +1,27 @@
-{ "kurulus-osman": { "title": "Kuruluş Osman", "seasons": 2 } }
+{[
+  {
+    "id": "kurulus-osman",
+    "title": "Kuruluş Osman",
+    "poster": "assets/posters/kurulus-osman.jpg"
+  },
+  {
+    "id": "alp-arslan",
+    "title": "Alp Arslan",
+    "poster": "assets/posters/alp-arslan.jpg"
+  },
+  {
+    "id": "salahuddin-ayyubi",
+    "title": "Salahuddin Ayyubi",
+    "poster": "assets/posters/salahuddin-ayyubi.jpg"
+  },
+  {
+    "id": "sultan-mehmet-fatih",
+    "title": "Sultan Mehmet Fatih",
+    "poster": "assets/posters/sultan-mehmet-fatih.jpg"
+  },
+  {
+    "id": "the-great-seljuk",
+    "title": "The Great Seljuk",
+    "poster": "assets/posters/the-great-seljuk.jpg"
+  }
+]
