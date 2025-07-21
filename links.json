@@ -1,1 +1,41 @@
-{ "kurulus-osman": { "season-1": [{ "episode": 1, "title": "Kuruluş Osman S1E1", "stream": "https://example.com/stream1", "download": "https://short.link/dl1" }] } }
+{
+  "Kuruluş Osman": {
+    "Season 1": [
+      {
+        "episode": "Episode 1",
+        "title": "Kuruluş Osman S1E1",
+        "thumbnail": "assets/posters/kurulus_ep1.jpg",
+        "stream": "https://yourstreamhost.com/embed/xyz1",
+        "download": "https://yourdownloadhost.com/file/abc1"
+      },
+      {
+        "episode": "Episode 2",
+        "title": "Kuruluş Osman S1E2",
+        "thumbnail": "assets/posters/kurulus_ep2.jpg",
+        "stream": "https://yourstreamhost.com/embed/xyz2",
+        "download": "https://yourdownloadhost.com/file/abc2"
+      }
+    ],
+    "Season 2": [
+      {
+        "episode": "Episode 1",
+        "title": "Kuruluş Osman S2E1",
+        "thumbnail": "assets/posters/kurulus_s2_ep1.jpg",
+        "stream": "https://yourstreamhost.com/embed/xyz3",
+        "download": "https://yourdownloadhost.com/file/abc3"
+      }
+    ]
+  },
+
+  "Sultan Mehmet Fatih": {
+    "Season 1": [
+      {
+        "episode": "Episode 1",
+        "title": "Sultan Mehmet Fatih S1E1",
+        "thumbnail": "assets/posters/mehmet_ep1.jpg",
+        "stream": "https://yourstreamhost.com/embed/xyz4",
+        "download": "https://yourdownloadhost.com/file/abc4"
+      }
+    ]
+  }
+}
