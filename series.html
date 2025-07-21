@@ -7,6 +7,41 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="index.html">Series</a><br>
+    <a href="links.html">Links</a><br>
+  </div>
+
+  <!-- Dark overlay -->
+  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- WRAP YOUR CONTENT INSIDE THIS -->
+  <div class="content">
+    <!-- Posters grid -->
+    <div class="poster-grid">
+      <!-- One poster example -->
+      <div class="poster">
+        <img src="assets/posters/kurulus-osman.jpg" alt="Kuruluş Osman">
+        <h3>Kuruluş Osman</h3>
+      </div>
+      <!-- More posters... -->
+    </div>
+  </div>
+
+  <!-- JavaScript at end -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('show');
+    }
+  </script>
+</body>
   <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
 <div id="sidebar" class="sidebar">
