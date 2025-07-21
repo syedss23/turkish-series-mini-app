@@ -1,1 +1,0 @@
-// JavaScript for navigation, sidebar, and interactivity
