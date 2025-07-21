@@ -1,0 +1,22 @@
+{
+  "kurulus-osman": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "Kuruluş Osman S1E1",
+        "stream": "https://www.youtube.com/embed/fake1",
+        "download": "https://short.link/osman1"
+      }
+    ]
+  },
+  "the-great-seljuk": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "The Great Seljuk S1E1",
+        "stream": "https://www.youtube.com/embed/fake2",
+        "download": "https://short.link/seljuk1"
+      }
+    ]
+  }
+}
