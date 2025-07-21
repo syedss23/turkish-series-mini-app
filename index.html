@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Turkish Series Mini App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="sidebar">
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
     <a href="index.html">Series</a>
     <a href="links.html">Links</a>
-    <a href="info.html">Further Info</a>
   </div>
 
+  <!-- Main Content -->
   <div class="main">
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search Turkish Series..." />
     </div>
-
-    <div class="series-grid" id="seriesGrid">
-      <!-- Series cards will be added here dynamically -->
-    </div>
+    <div class="series-grid" id="seriesGrid"></div>
   </div>
 
   <script>
+    // Toggle sidebar
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("active");
+    }
+
+    // Load series from JSON
     async function loadSeries() {
       const res = await fetch("series.json");
       const data = await res.json();
@@ -42,6 +51,7 @@
         grid.appendChild(card);
       });
 
+      // Search
       document.getElementById("searchInput").addEventListener("input", function () {
         const search = this.value.toLowerCase();
         const cards = document.querySelectorAll(".series-card");
@@ -54,5 +64,6 @@
 
     loadSeries();
   </script>
+
 </body>
 </html>
