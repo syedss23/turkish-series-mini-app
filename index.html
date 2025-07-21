@@ -1,1 +1,60 @@
-<!-- Homepage with posters and search -->
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turkish Series Mini App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">Turkish Series</div>
+    <nav>
+      <a href="index.html">Series</a>
+      <a href="links.html">Links</a>
+      <a href="javascript:void(0);" onclick="alert('Coming soon')">Further Information</a>
+    </nav>
+  </div>  <!-- Top bar -->  <header>
+    <button id="menuToggle">☰</button>
+    <div class="lang-selector">
+      <select id="language" onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ur">Urdu</option>
+      </select>
+    </div>
+  </header>  <!-- Main Content -->  <main>
+    <h1>Popular Turkish Series</h1>
+    <div class="series-grid" id="seriesGrid"></div>
+  </main>  <script>
+    const toggleBtn = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    function setLanguage(lang) {
+      alert("Language switched to: " + lang);
+      // Implement actual i18n logic as needed
+    }
+
+    // Load series from data.json
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const grid = document.getElementById("seriesGrid");
+        Object.keys(data).forEach((slug) => {
+          const s = data[slug];
+          const item = document.createElement("a");
+          item.href = `series.html?slug=${slug}`;
+          item.className = "series-item";
+          item.innerHTML = `
+            <img src="assets/posters/${s.poster}" alt="${s.title}" />
+            <h3>${s.title}</h3>
+          `;
+          grid.appendChild(item);
+        });
+      });
+  </script></body>
+</html><!-- Homepage with posters and search -->
