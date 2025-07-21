@@ -1,0 +1,32 @@
+{
+  "kurulus-osman": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "Kuruluş Osman S1E1",
+        "stream": "https://example.com/embed/osman-s1e1",
+        "download": "https://short.link/osman-s1e1"
+      }
+    ]
+  },
+  "alp-arslan": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "Alp Arslan S1E1",
+        "stream": "https://example.com/embed/arslan-s1e1",
+        "download": "https://short.link/arslan-s1e1"
+      }
+    ]
+  },
+  "thegreatseljuk": {
+    "season-1": [
+      {
+        "episode": 1,
+        "title": "The Great Seljuk S1E1",
+        "stream": "https://example.com/embed/seljuk-s1e1",
+        "download": "https://short.link/seljuk-s1e1"
+      }
+    ]
+  }
+}

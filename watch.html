@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Episode</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">← Back to Series</a>
+  </div>
+  <div class="content" id="video-container"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const series = urlParams.get("series");
+    const season = urlParams.get("season");
+    const episodeNum = parseInt(urlParams.get("episode"));
+
+    fetch("links.json")
+      .then(res => res.json())
+      .then(data => {
+        const episode = data[series]?.[season]?.find(e => e.episode === episodeNum);
+        if (episode) {
+          document.getElementById("video-container").innerHTML = \`
+            <h1>\${episode.title}</h1>
+            <iframe src="\${episode.stream}" frameborder="0" allowfullscreen></iframe>
+          \`;
+        } else {
+          document.getElementById("video-container").innerText = "Episode not found.";
+        }
+      });
+  </script>
+</body>
+</html>

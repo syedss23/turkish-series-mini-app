@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Series Episodes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <button class="menu-toggle">&#9776;</button>
+    <div class="logo">Turkish Series</div>
+  </div>
+  <div class="sidebar">
+    <a href="index.html">Series</a>
+    <a href="#">Links</a>
+    <a href="#">Further Information</a>
+  </div>
+  <div class="content">
+    <div id="episode-list"></div>
+  </div>
+
+  <script>
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.toggle("open");
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const seriesId = urlParams.get("series");
+
+    fetch("links.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("episode-list");
+        if (data[seriesId]) {
+          for (const [season, episodes] of Object.entries(data[seriesId])) {
+            const seasonDiv = document.createElement("div");
+            seasonDiv.innerHTML = \`<h2>\${season}</h2>\`;
+            episodes.forEach(ep => {
+              seasonDiv.innerHTML += \`
+                <div class="episode-card">
+                  <a href="watch.html?series=\${seriesId}&season=\${season}&episode=\${ep.episode}">
+                    <p>\${ep.title}</p>
+                  </a>
+                  <a href="\${ep.download}" class="download-btn">Download</a>
+                </div>
+              \`;
+            });
+            container.appendChild(seasonDiv);
+          }
+        } else {
+          container.innerHTML = "<p>No data found for this series.</p>";
+        }
+      });
+  </script>
+</body>
+</html>

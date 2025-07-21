@@ -1,0 +1,17 @@
+[
+  {
+    "id": "kurulus-osman",
+    "title": "Kuruluş Osman",
+    "poster": "assets/posters/kurulus-osman.jpg"
+  },
+  {
+    "id": "alp-arslan",
+    "title": "Alp Arslan",
+    "poster": "assets/posters/alp-arslan.jpg"
+  },
+  {
+    "id": "thegreatseljuk",
+    "title": "The Great Seljuk",
+    "poster": "assets/posters/thegreatseljuk.jpg"
+  }
+]
