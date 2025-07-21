@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch Episode</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <h1 id="episode-title">Episode</h1>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="series.html">🎬 Series</a></li>
+      <li><a href="links.html">🔗 Links</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content episode-page">
+    <div class="video-wrapper" id="video-frame"></div>
+    <a id="download-btn" class="btn download" target="_blank">⬇️ Download Episode</a>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get("title");
+    const stream = urlParams.get("stream");
+    const download = urlParams.get("download");
+
+    document.getElementById("episode-title").textContent = title || "Watch Episode";
+    document.getElementById("download-btn").href = download || "#";
+
+    const video
