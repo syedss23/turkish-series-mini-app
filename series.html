@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Series</a><br>
+  <a href="links.html">Links</a><br>
+  <!-- Remove "Further Info" -->
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
   <div id="series-detail"></div>
 
   <script>
