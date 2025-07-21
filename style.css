@@ -1,104 +1,104 @@
-/* Reset and base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  background-color: #141414;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #fff;
-  overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #141414;
+  color: white;
+  display: flex;
+  flex-direction: row;
 }
 
-/* Sidebar */
 .sidebar {
+  background: #000;
   width: 220px;
-  background-color: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 100vh;
-  padding: 2rem 1rem;
+  padding-top: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  border-right: 1px solid #333;
+  gap: 20px;
+  transition: transform 0.3s ease;
 }
+
 .sidebar a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: 0.2s;
-}
-.sidebar a:hover {
-  color: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
 }
 
-/* Main content */
-.main {
-  margin-left: 240px;
-  padding: 2rem;
-}
-
-/* Search bar */
-.search-bar {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 2rem;
-}
-.search-bar input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #333;
-  color: #fff;
-  font-size: 1rem;
-}
-
-/* Series grid */
-.series-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.5rem;
-}
-.series-card {
-  background-color: #1c1c1c;
-  border-radius: 8px;
-  overflow: hidden;
+.hamburger {
+  display: none;
+  font-size: 28px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  z-index: 1001;
 }
-.series-card:hover {
-  transform: scale(1.05);
+
+/* For small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 70px 20px 20px 20px;
+  }
 }
-.series-card img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
+
+.main {
+  margin-left: 220px;
+  padding: 20px;
+  flex-grow: 1;
+  transition: all 0.3s ease;
 }
-.series-card h3 {
-  padding: 0.5rem;
-  font-size: 1rem;
+
+.search-bar {
+  margin-bottom: 20px;
   text-align: center;
 }
 
-/* Responsive layout */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1rem;
-  }
-  .main {
-    margin-left: 0;
-    padding: 1rem;
-  }
-  .series-card img {
-    height: 220px;
-  }
+.search-bar input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.series-card {
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.series-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.series-card h3 {
+  font-size: 16px;
+  padding: 10px 5px;
 }
