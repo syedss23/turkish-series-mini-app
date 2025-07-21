@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li onclick="location.href='index.html'">Series</li>
+    <li onclick="location.href='links.html'">Links</li>
+    <!-- <li onclick="location.href='info.html'">Further Info</li> -->
+  </ul>
+</div>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
   <!-- Hamburger Icon -->
   <div class="hamburger" onclick="toggleSidebar()">☰</div>
@@ -68,6 +77,13 @@
 
     loadSeries();
   </script>
-
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('show');
+  }
+</script>
 </body>
 </html>
