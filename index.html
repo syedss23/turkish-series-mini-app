@@ -3,141 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Turkish Series</title>
+  <title>Turkish Series App</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #141414;
-      padding: 10px 20px;
-    }
-
-    header h1 {
-      font-size: 24px;
-    }
-
-    .nav-toggle {
-      font-size: 24px;
-      cursor: pointer;
-      display: none;
-    }
-
-    nav {
-      background-color: #141414;
-      padding: 10px 0;
-    }
-
-    .sidebar {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .series-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .series-card {
-      background-color: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .series-card:hover {
-      transform: scale(1.05);
-    }
-
-    .series-card img {
-      width: 100%;
-      display: block;
-    }
-
-    .series-card h3 {
-      font-size: 16px;
-      margin: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .sidebar {
-        flex-direction: column;
-        display: none;
-        text-align: center;
-      }
-
-      .sidebar.active {
-        display: flex;
-      }
-    }
-  </style>
 </head>
 <body>
-
-  <header>
+  <div class="navbar">
+    <button class="menu-toggle">☰</button>
     <h1>Turkish Series</h1>
-    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
-  </header>
+  </div>
 
-  <nav>
-    <div class="sidebar" id="menu">
-      <a href="index.html">Series</a>
-      <a href="link.html">Links</a>
-      <a href="#">Language: English</a>
-    </div>
-  </nav>
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="links.html">Links</a>
+  </div>
 
-  <main>
-    <div class="series-container" id="seriesList">
-      <!-- Series posters will be injected here -->
-    </div>
-  </main>
+  <div class="main-content">
+    <div class="series-grid" id="series-container"></div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
-
     async function loadSeries() {
-      const res = await fetch('series.json');
-      const data = await res.json();
-      const container = document.getElementById('seriesList');
+      const response = await fetch('series.json');
+      const data = await response.json();
+      const container = document.getElementById('series-container');
 
-      Object.entries(data).forEach(([key, series]) => {
-        const card = document.createElement('div');
-        card.className = 'series-card';
-        card.innerHTML = `
-          <a href="series.html?series=${key}">
+      Object.entries(data).forEach(([id, series]) => {
+        const div = document.createElement('div');
+        div.className = 'series-card';
+        div.innerHTML = `
+          <a href="series.html?id=${id}">
             <img src="assets/posters/${series.poster}" alt="${series.title}">
-            <h3>${series.title}</h3>
-          </a>`;
-        container.appendChild(card);
+            <h2>${series.title}</h2>
+          </a>
+        `;
+        container.appendChild(div);
       });
     }
 
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector(".sidebar").classList.toggle("show");
+    });
+
     loadSeries();
   </script>
-
 </body>
 </html>
