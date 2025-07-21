@@ -1,9 +1,58 @@
-turkish-series-mini-app/
-│
-├── index.html              ← Main Netflix-style home page
-├── series.html             ← Page for episodes of selected series
-├── style.css               ← Netflix-style CSS (I'll provide next)
-├── series.json             ← Series data
-├── links.json              ← Episode links (stream + download)
-├── assets/
-│   └── posters/            ← Poster images (e.g., kurulus-osman.jpg)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turkish Series Mini App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <a href="index.html">Series</a>
+    <a href="links.html">Links</a>
+    <a href="info.html">Further Info</a>
+  </div>
+
+  <div class="main">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search Turkish Series..." />
+    </div>
+
+    <div class="series-grid" id="seriesGrid">
+      <!-- Series cards will be added here dynamically -->
+    </div>
+  </div>
+
+  <script>
+    async function loadSeries() {
+      const res = await fetch("series.json");
+      const data = await res.json();
+      const grid = document.getElementById("seriesGrid");
+
+      Object.keys(data).forEach(key => {
+        const series = data[key];
+        const card = document.createElement("div");
+        card.className = "series-card";
+        card.innerHTML = `
+          <a href="series.html?slug=${key}">
+            <img src="assets/posters/${series.poster}" alt="${series.name}" />
+            <h3>${series.name}</h3>
+          </a>
+        `;
+        grid.appendChild(card);
+      });
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const search = this.value.toLowerCase();
+        const cards = document.querySelectorAll(".series-card");
+        cards.forEach(card => {
+          const title = card.innerText.toLowerCase();
+          card.style.display = title.includes(search) ? "" : "none";
+        });
+      });
+    }
+
+    loadSeries();
+  </script>
+</body>
+</html>
