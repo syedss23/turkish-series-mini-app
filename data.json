@@ -1,1 +1,27 @@
-{ "languages": ["English", "Hindi", "Urdu"] }
+[
+  {
+    "id": "kurulus-osman",
+    "title": "Kuruluş Osman",
+    "poster": "kurulus-osman.jpg"
+  },
+  {
+    "id": "alp-arslan",
+    "title": "Alp Arslan",
+    "poster": "alp-arslan.jpg"
+  },
+  {
+    "id": "salahuddin-ayyubi",
+    "title": "Salahuddin Ayyubi",
+    "poster": "salahuddin-ayyubi.jpg"
+  },
+  {
+    "id": "sultan-mehmet-fatih",
+    "title": "Sultan Mehmet Fatih",
+    "poster": "sultan-mehmet-fatih.jpg"
+  },
+  {
+    "id": "the-great-seljuk",
+    "title": "The Great Seljuk",
+    "poster": "the-great-seljuk.jpg"
+  }
+]
